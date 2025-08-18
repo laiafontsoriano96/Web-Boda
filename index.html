@@ -258,28 +258,51 @@
         </a>
     </div>
   </div> 
+</section>
+
 <script>
-    // Llista de codis amb les places assignades
+  document.addEventListener("DOMContentLoaded", function){}
+                                // Llista de codis amb les places assignades
     const codis = {
       "a8f3z": 1,
       "7xk92": 2,
       "z3lm1": 3,
       "9qwr4": 4
     };
-
     // Llegir el paràmetre "codi" de la URL
     const params = new URLSearchParams(window.location.search);
-    const codi = params.get("codi");
+    let codi = params.get("codi");
+    if (codi) codi = codi.toLowerCase().trim();
+// Depuració: mostrar a la consola quin codi s'ha llegit
+  console.log("Codi llegit:", codi);
 
-    // Comprovar si el codi existeix i mostrar places
-    if (codi && codis[codi]) {
-      document.getElementById("places").textContent =
-        `Tens ${codis[codi]} places reservades 🎉`;
+  if (!codi) {
+    numeroEl.textContent = "?";
+    textPlaça.textContent = "⚠️ Cap codi a l'URL";
+    return;
+  }
+    // Seleccionem els elements
+  const numeroEl = document.getElementById("numero-places");
+  const textPlaça = numeroEl.nextElementSibling; // agafem el <h2> següent que diu "plaça per tu"
+
+  if (codi && codis[codi]) {
+    const places = codis[codi];
+    numeroEl.textContent = places;
+    textPlaça.textContent = (places === 1) ? "plaça per tu 🤍" : "places per tu 🤍";
+    console.log("Places assignades:", places);
+    
+    // Canviar el text de "plaça/places" segons el nombre
+    if (places === 1) {
+      textPlaça.textContent = "plaça per tu 🤍";
     } else {
-      document.getElementById("places").textContent =
-        "⚠️ Aquest enllaç no és vàlid.";
+      textPlaça.textContent = "places per tu 🤍";
     }
-  </script>
+
+  } else {
+    numeroEl.textContent = "?";
+    textPlaça.textContent = "⚠️ Codi invàlid";
+  }
+</script>
 
 <!--Targeta 2: Obsequi-->
     <div class="card">
