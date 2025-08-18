@@ -257,7 +257,29 @@
             Confirmar assistència
         </a>
     </div>
+<script>
+    // Llista de codis amb les places assignades
+    const codis = {
+      "a8f3z": 1,
+      "7xk92": 2,
+      "z3lm1": 3,
+      "9qwr4": 4
+    };
 
+    // Llegir el paràmetre "codi" de la URL
+    const params = new URLSearchParams(window.location.search);
+    const codi = params.get("codi");
+
+    // Comprovar si el codi existeix i mostrar places
+    if (codi && codis[codi]) {
+      document.getElementById("places").textContent =
+        `Tens ${codis[codi]} places reservades 🎉`;
+    } else {
+      document.getElementById("places").textContent =
+        "⚠️ Aquest enllaç no és vàlid.";
+    }
+  </script>
+  
 <!--Targeta 2: Obsequi-->
     <div class="card">
         <span class="decoracio">🌿</span>
@@ -372,35 +394,4 @@ color: #35543c;
 </style>
 <body><p class="font-dancing text-2xl text-black-600 mt-6">Us esperam, Guillem & Laia </p></body>
     </div>
-<head>
-  <meta charset="UTF-8">
-  <title>Confirmació assistència</title>
-</head>
-<body>
-  <h1>Confirmació d'assistència</h1>
-  <p id="places"></p>
-
-  <script>
-    // Llista de codis amb les places assignades
-    const codis = {
-      "a8f3z": 1,
-      "7xk92": 2,
-      "z3lm1": 3,
-      "9qwr4": 4
-    };
-
-    // Llegir el paràmetre "codi" de la URL
-    const params = new URLSearchParams(window.location.search);
-    const codi = params.get("codi");
-
-    // Comprovar si el codi existeix i mostrar places
-    if (codi && codis[codi]) {
-      document.getElementById("places").textContent =
-        `Tens ${codis[codi]} places reservades 🎉`;
-    } else {
-      document.getElementById("places").textContent =
-        "⚠️ Aquest enllaç no és vàlid.";
-    }
-  </script>
-</body>
 </html>
