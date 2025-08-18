@@ -244,65 +244,53 @@
     </p>
 </p>
                 <!--p class="font-playfair text-black-600 mb-6">Per favor, confirma abans de l'1 d'Agost</p-->
-
 <section id="invitació">
   <div class="cards-container">
-    <!--Targeta 1: plaça reservada-->
     <div class="card first-card">
-        <span class="decoracio">🌿</span>
-        <h2>T'hem reservat</h2>
-        <p class="numero" id="numero-places">0</p>
-        <h2>plaça per tu 🤍</h2>
-        <a href="https://forms.gle/NFkoisx11JYHiKud8" target="_blank" class="btn">
-            Confirmar assistència
-        </a>
+      <span class="decoracio">🌿</span>
+      <h2>T'hem reservat</h2>
+      <p class="numero" id="numero-places">0</p>
+      <h2>plaça per tu 🤍</h2>
+      <a href="https://forms.gle/NFkoisx11JYHiKud8" target="_blank" class="btn">
+        Confirmar assistència
+      </a>
     </div>
-  </div> 
+  </div>
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function){}
-                                // Llista de codis amb les places assignades
-    const codis = {
-      "a8f3z": 1,
-      "7xk92": 2,
-      "z3lm1": 3,
-      "9qwr4": 4
-    };
-    // Llegir el paràmetre "codi" de la URL
-    const params = new URLSearchParams(window.location.search);
-    let codi = params.get("codi");
-    if (codi) codi = codi.toLowerCase().trim();
-// Depuració: mostrar a la consola quin codi s'ha llegit
-  console.log("Codi llegit:", codi);
+document.addEventListener("DOMContentLoaded", function() {
+  const codis = {
+    "a8f3z": 1,
+    "7xk92": 2,
+    "z3lm1": 3,
+    "9qwr4": 4
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  let codi = params.get("codi");
+  if (codi) codi = codi.toLowerCase().trim();
+
+  const numeroEl = document.getElementById("numero-places");
+  const textPlaça = numeroEl.nextElementSibling;
 
   if (!codi) {
     numeroEl.textContent = "?";
     textPlaça.textContent = "⚠️ Cap codi a l'URL";
     return;
   }
-    // Seleccionem els elements
-  const numeroEl = document.getElementById("numero-places");
-  const textPlaça = numeroEl.nextElementSibling; // agafem el <h2> següent que diu "plaça per tu"
 
-  if (codi && codis[codi]) {
+  if (codis[codi]) {
     const places = codis[codi];
     numeroEl.textContent = places;
     textPlaça.textContent = (places === 1) ? "plaça per tu 🤍" : "places per tu 🤍";
-    console.log("Places assignades:", places);
-    
-    // Canviar el text de "plaça/places" segons el nombre
-    if (places === 1) {
-      textPlaça.textContent = "plaça per tu 🤍";
-    } else {
-      textPlaça.textContent = "places per tu 🤍";
-    }
-
   } else {
     numeroEl.textContent = "?";
     textPlaça.textContent = "⚠️ Codi invàlid";
   }
+});
 </script>
+
 
 <!--Targeta 2: Obsequi-->
     <div class="card">
