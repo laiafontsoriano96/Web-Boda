@@ -194,7 +194,7 @@
                         href="https://maps.app.goo.gl/1BXbGsmJBV1DZs4L6"
                         target="_blank"
                         class="mt-8 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
-                        Ver ubicación 📍
+                        Veure ubicació 📍
                     </a>
                 </div>
                 </div>
@@ -206,7 +206,7 @@
                         href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7"
                         target="blank"
                         class="mt-6 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
-                        Ver ubicación 📍
+                        Veure ubicació 📍
                     </a>
                     <div></div>
 
@@ -371,36 +371,36 @@ color: #35543c;
   
 </style>
 <body><p class="font-dancing text-2xl text-black-600 mt-6">Us esperam, Guillem & Laia </p></body>
-
-<!--script> /*possible plaça per persona*/
-  const codigoInvitado = prompt("Introdueix el teu codi d'invitació:");
-
-  // URL de tu Sheet convertido a JSON
-  const url = "https://opensheet.elk.sh/2PACX-1vRUFpG6YqqiIcB06sa8eZ9iekdPwgz3Fe_fsEom_EA8gc6-7iY7IMAPwxlS4auM8-9UzLfSI8HlVzcv/Full1";
-
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      // Buscar al invitado por código
-      const invitado = data.find(i => i.Código === codigoInvitado);
-
-      if(invitado){
-        const plazas = parseInt(invitado.Plazas);
-        const mensaje = document.getElementById("mensaje");
-
-        if(plazas > 1){
-          mensaje.innerHTML = `Hem reservat <strong>${plazas} places</strong> per vosaltres 🤍`;
-        } else {
-          mensaje.innerHTML = `Hem reservat <strong>1 plaça</strong> per ${invitado.Nombre} 🤍`;
-        }
-      } else {
-        alert("Codi invàlid, comprova amb els organitzadors.");
-      }
-    })
-    .catch(err => console.error("Error cargando datos:", err));
-</script>-->
-
-
-
     </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmació assistència</title>
+</head>
+<body>
+  <h1>Confirmació d'assistència</h1>
+  <p id="places"></p>
+
+  <script>
+    // Llista de codis amb les places assignades
+    const codis = {
+      "a8f3z": 1,
+      "7xk92": 2,
+      "z3lm1": 3,
+      "9qwr4": 4
+    };
+
+    // Llegir el paràmetre "codi" de la URL
+    const params = new URLSearchParams(window.location.search);
+    const codi = params.get("codi");
+
+    // Comprovar si el codi existeix i mostrar places
+    if (codi && codis[codi]) {
+      document.getElementById("places").textContent =
+        `Tens ${codis[codi]} places reservades 🎉`;
+    } else {
+      document.getElementById("places").textContent =
+        "⚠️ Aquest enllaç no és vàlid.";
+    }
+  </script>
+</body>
 </html>
