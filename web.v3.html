@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda - Guillem & Laia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+    .font-dancing { font-family: 'Dancing Script', cursive; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+
+    .fade-in { animation: fadeIn 2s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart-float { animation: heartFloat 3s ease-in-out infinite; }
+    @keyframes heartFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        #f0f4e3,
+        radial-gradient(circle at 20% 80%, rgba(107, 142, 35, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(85, 107, 47, 0.6) 0%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Imagen pareja */
+    .imagen-derecha {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+      height: auto;
+    }
+
+    /* Contador */
+    .contador {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      background: #fff;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+      margin-top: 40px;
+    }
+    .bloque {
+      font-size: 2em;
+      font-weight: bold;
+      color: #791919;
+      text-align: center;
+    }
+    .bloque span {
+      display: block;
+      font-size: 0.5em;
+      font-weight: normal;
+      color: #333;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen">
+
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-12 fade-in">
+      <div class="flex justify-center items-center mb-6">
+        <img src="mll.png" alt="Mallorca" class="w-18 h-12 inline-block">
+        <img src="avio.png" alt="Avio" class="w-12 h-12 heart-float inline-block">
+        <img src="barcu.png" alt="Barcu" class="w-12 h-12 heart-float inline-block">
+        <img src="mnc.png" alt="Menorca" class="w-11 h-11 inline-block">
+      </div>
+      <h1 class="font-dancing text-6xl md:text-8xl text-green-700 mb-4">Guillem & Laia</h1>
+      <p class="font-playfair text-xl text-black-700">M'hos casam!</p>
+    </div>
+
+    <!-- Imagen de pareja -->
+    <div class="text-center mb-8">
+      <img src="besito.png" alt="silueta" class="imagen-derecha">
+    </div>
+
+    <!-- Contador -->
+    <div class="contador">
+      <div class="bloque" id="dies">0<span>Dies</span></div>
+      <div class="bloque" id="hores">0<span>Hores</span></div>
+      <div class="bloque" id="minuts">0<span>Minuts</span></div>
+      <div class="bloque" id="segons">0<span>Segons</span></div>
+    </div>
+
+    <!-- Tarjeta invitación -->
+    <div class="bg-green-50 rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in border-4 border-green-200" style="animation-delay: 0.5s;">
+      <div class="text-center">
+        <p class="font-playfair text-lg text-black-600 leading-relaxed">
+          Des de Mallorca i Menorca, amb amor i aventures,
+          hem decidit fer equip per sempre!
+          Comencem el viatge més important de la nostra vida,
+          i ens encantaria que ens acompanyassis per celebrar-ho!
+        </p>
+      </div>
+    </div>
+
+    <!-- Detalles evento -->
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <div class="bg-green-50 rounded-2xl p-6">
+        <div class="text-4xl mb-3">📅</div>
+        <h3 class="font-playfair text-xl font-bold text-gray-800 mb-2">Fecha</h3>
+        <p class="text-gray-600">Sábado, 15 de Junio</p>
+        <p class="text-gray-600">2024</p>
+      </div>
+      <div class="bg-green-50 rounded-2xl p-6">
+        <div class="text-4xl mb-3">⏰</div>
+        <h3 class="font-playfair text-xl font-bold text-gray-800 mb-2">Hora</h3>
+        <p class="text-gray-600">Ceremonia: 4:00 PM</p>
+        <p class="text-gray-600">Recepción: 6:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Lugar -->
+    <div class="bg-green-50 rounded-2xl p-6 mb-8">
+      <div class="text-4xl mb-3">📍</div>
+      <h3 class="font-playfair text-xl font-bold text-gray-800 mb-2">Lugar</h3>
+      <p class="text-gray-600 mb-2">Jardín de Eventos "Villa Rosa"</p>
+      <p class="text-gray-600">Av. Principal 123, Ciudad</p>
+      <button onclick="openMap()" class="mt-3 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full transition-colors duration-300">
+        Ver ubicación 📍
+      </button>
+    </div>
+
+    <!-- Vestimenta -->
+    <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-6 mb-8">
+      <div class="text-4xl mb-3">👗</div>
+      <h3 class="font-playfair text-xl font-bold text-gray-800 mb-2">Código de Vestimenta</h3>
+      <p class="text-gray-600">Formal / Elegante</p>
+      <p class="text-sm text-gray-500 mt-2">Colores sugeridos: Rosa, blanco, beige, azul marino</p>
+    </div>
+
+    <!-- Confirmación -->
+    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in border-4 border-green-200" style="animation-delay: 1s;">
+      <div class="text-center">
+        <h3 class="font-dancing text-4xl text-green-600 mb-6">Confirma tu asistencia</h3>
+        <p class="font-playfair text-gray-600 mb-6">Por favor, confirma antes del 1 de Junio</p>
+
+        <div class="max-w-md mx-auto">
+          <div class="mb-4">
+            <input type="text" placeholder="Tu nombre completo" class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-400 focus:outline-none">
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-400 focus:outline-none">
+              <option>¿Asistirás?</option>
+              <option>Sí, asistiré ✨</option>
+              <option>No podré asistir 😔</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <input type="number" placeholder="Número de acompañantes" min="0" max="5" class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-400 focus:outline-none">
+          </div>
+          <button onclick="confirmAttendance()" class="w-full bg-gradient-to-r from-green-800 to-green-500 hover:from-green-600 hover:to-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
+            Confirmar Asistencia 💌
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensaje final -->
+    <div class="bg-gradient-to-r from-rose-200 to-pink-200 rounded-3xl p-8 text-center fade-in" style="animation-delay: 1.5s;">
+      <div class="text-5xl mb-4">💝</div>
+      <h3 class="font-dancing text-3xl text-gray-800 mb-4">Un mensaje especial</h3>
+      <p class="font-playfair text-gray-700 leading-relaxed max-w-2xl mx-auto">
+        "El amor no se mira, se siente. Y nosotros queremos sentirlo junto a las personas más importantes de nuestras vidas. 
+        Gracias por ser parte de nuestra historia de amor."
+      </p>
+      <p class="font-dancing text-2xl text-rose-600 mt-6">Con amor, Guillem & Laia 💕</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-12 fade-in" style="animation-delay: 2s;">
+      <div class="flex justify-center space-x-4 mb-4">
+        <span class="text-2xl">🌹</span>
+        <span class="text-2xl">💍</span>
+        <span class="text-2xl">🥂</span>
+        <span class="text-2xl">💒</span>
+        <span class="text-2xl">🌹</span>
+      </div>
+      <p class="text-gray-500 text-sm">¡Esperamos verte en nuestro día especial!</p>
+    </div>
+  </div>
+
+  <script>
+    function openMap() {
+      alert('🗺️ Abriendo ubicación en el mapa...\n\nJardín de Eventos "Villa Rosa"\nAv. Principal 123, Ciudad\n\n(En una página real, esto abriría Google Maps)');
+    }
+
+    function confirmAttendance() {
+      const name = document.querySelector('input[placeholder="Tu nombre completo"]').value;
+      const attendance = document.querySelector('select').value;
+      const guests = document.querySelector('input[type="number"]').value;
+
+      if (!name || attendance === '¿Asistirás?') {
+        alert('Por favor, completa todos los campos requeridos 💕');
+        return;
+      }
+      alert(`¡Gracias ${name}! 💕\n\nHemos recibido tu confirmación:\n${attendance}\n${guests ? `Acompañantes: ${guests}` : 'Sin acompañantes'}\n\n¡Te esperamos en nuestro día especial! 🌹`);
+
+      document.querySelector('input[placeholder="Tu nombre completo"]').value = '';
+      document.querySelector('select').selectedIndex = 0;
+      document.querySelector('input[type="number"]').value = '';
+    }
+
+    // Contador
+    const fechaObjetivo = new Date(2026, 9, 3, 0, 0, 0); // 3 octubre 2026
+    function actualizarContador() {
+      const ahora = new Date();
+      const diferencia = fechaObjetivo - ahora;
+
+      if (diferencia <= 0) {
+        document.querySelector(".contador").innerHTML = "🎉 Ha arribat el dia!";
+        clearInterval(intervalo);
+        return;
+      }
+
+      const dies = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const hores = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minuts = Math.floor((diferencia / (1000 * 60)) % 60);
+      const segons = Math.floor((diferencia / 1000) % 60);
+
+      document.getElementById("dies").innerHTML = dies + "<span>Dies</span>";
+      document.getElementById("hores").innerHTML = hores + "<span>Hores</span>";
+      document.getElementById("minuts").innerHTML = minuts + "<span>Minuts</span>";
+      document.getElementById("segons").innerHTML = segons + "<span>Segons</span>";
+    }
+    const intervalo = setInterval(actualizarContador, 1000);
+    actualizarContador();
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra boda</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    section {
+      height: 100vh; /* ocupa toda la pantalla */
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+
+    .page1 { background: #f8e1e1; }
+    .page2 { background: #dff7f7; }
+    .page3 { background: #fff3d9; }
+  </style>
+</head>
+<body>
+  <section class="page1">🎉 Guillem & Laia</section>
+  <section class="page2">💌 Lloc</section>
+  <section class="page3">📍 Confirmar asistencia</section>
+</body>
+</html>

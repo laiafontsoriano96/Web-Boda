@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Guillem & Laia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-quicksand { font-family: 'Quicksand', sans-serif; }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .heart-float {
+            animation: heartFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .bg-floral {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(107, 142, 35, 0.6) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(85, 107, 47, 0.6) 0%, transparent 50%);
+        }       
+        body {
+  min-height: 100vh; /* Assegura que cobreixi tota la finestra */
+  margin: 0;
+  background: 
+    #728f13, /* Color base clar */
+    radial-gradient(circle at 20% 80%, rgba(114, 143, 19, 0.9) 30%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(100, 125, 16, 0.9) 30%, transparent 50%),
+    radial-gradient(circle at 20% 30%, rgba(85, 110, 13, 0.8)20%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Recuadro interno */
+.recuadro {
+  background-color: rgba(19, 145, 51, 0.715); /* ligeramente transparente */
+  border: 2px solid #d1d5db;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 3rem auto;
+  text-align: center;
+}
+}
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen bg-floral">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header con mallorca y menorca flotantes -->
+        <div class="text-center mb-12 fade-in">
+            <div class="flex justify-center items-center mb-6">
+                <img src="mll.png" alt="Mallorca" class="text-4xl heart inline-block w-18 h-12">
+                <img src="avio.png" alt="Avio" class="text-4xl heart-float inline-block w-12 h-12">
+                <img src="barcu.png" alt="Barcu" class="text-4xl heart-float inline-block w-12 h-12">
+                <img src="mnc.png" alt="Menorca" class="text-4xl heart inline-block w-11 h-11">
+            </div>
+            <h1 class="font-dancing text-6xl md:text-8xl text-green-700 mb-4">Guillem & Laia</h1>
+            <p class="font-playfair text-xl text-black-700">M'hos casam!</p>
+        </div>
+<!--Imatge nostre-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Imatge nostre</title>
+  <style>
+    .imagen-derecha {
+      position: fixed;   /* Posiciona la imagen libremente */
+      top: -600px;            /* Distancia desde arriba */
+      left: 55%; /*empieza desde el centro de la pantalla*/
+      transform: translateX (-50%); /*centra la imagen respecto a su ancho*/
+      right: 1px;          /* Distancia desde la derecha */
+      width: 800px;         /* Tamaño de la imagen */
+      z-index: -1; /*important, queda darrera del contingut*/
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagen -->
+  <img src="besito.png" alt="silueta" class="imagen-derecha">
+</body>
+</html>
+
+        <!-- Tarjeta principal de invitación -->
+        <div class="bg-green rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in border-4 border-green-200" style="animation-delay: 0.5s;">
+            <div class="text-center">
+                <div class="mb-8">
+                    <svg class="w-16 h-16 mx-auto text-[#791919] mb-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <!-- h2 class="font-playfair text-3xl text-gray-800 mb-4">M'hos casam!</h2--> 
+                    <p class="font-playfair text-lg text-black-600 leading-relaxed">
+                        Des de Mallorca i Menorca, amb amor i aventures,
+                        hem decidit fer equip per sempre!
+                        Comencem el viatge més important de la nostra vida,
+                        i ens encantaria que ens acompanyassis per celebrar-ho!
+                    </p>
+                </div>
+<body>
+    
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Página</title>
+  <style>
+    /* Estilos del contador */
+    .contador {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #fff;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+      margin-top: 60px; /* separación desde la imagen */
+    }
+    .bloque {
+      font-size: 2em;
+      font-weight: bold;
+      color: #791919;
+    }
+    .bloque span {
+      display: block;
+      font-size: 0.5em;
+      font-weight: normal;
+      color: #333;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contador -->
+  <div class="contador">
+    <div class="bloque" id="dies">0<span>Dies</span></div>
+    <div class="bloque" id="hores">0<span>Hores</span></div>
+    <div class="bloque" id="minuts">0<span>Minuts</span></div>
+    <div class="bloque" id="segons">0<span>Segons</span></div>
+  </div>
+
+  <!-- Script del contador -->
+  <script>
+    const fechaObjetivo = new Date(2026, 10, 3, 0, 0, 0); // 3 de octubre 2026
+
+    function actualizarContador() {
+      const ahora = new Date();
+      const diferencia = fechaObjetivo - ahora;
+
+      if (diferencia <= 0) {
+        document.querySelector(".contador").innerHTML = "🎉 Ha arribat el dia!";
+        clearInterval(intervalo);
+        return;
+      }
+
+      const dies = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const hores = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minuts = Math.floor((diferencia / (1000 * 60)) % 60);
+      const segons = Math.floor((diferencia / 1000) % 60);
+
+      document.getElementById("dies").innerHTML = dies + "<span>Dies</span>";
+      document.getElementById("hores").innerHTML = hores + "<span>Hores</span>";
+      document.getElementById("minuts").innerHTML = minuts + "<span>Minuts</span>";
+      document.getElementById("segons").innerHTML = segons + "<span>Segons</span>";
+    }
+
+    const intervalo = setInterval(actualizarContador, 1000);
+    actualizarContador();
+  </script>
+</body>
+</html>
+
+</body>
+                <!-- Detalles del evento -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8 mt-16">
+                    <div class="bg-green-50 rounded-2xl p-6">
+                        <div class="text-4xl mb-3">📅</div>
+                        <h3 class="font-playfair text-xl font-bold text-black-800 mb-2">Data</h3>
+                        <p class="text-black-600">Dissabte, 3 d'octubre</p>
+                        <p class="text-black-600">2026</p>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6">
+                        <div class="text-4xl mb-3">⏰</div>
+                        <h3 class="font-playfair text-xl font-bold text-black-800 mb-2">Hora</h3>
+                        <p class="text-black-600">Ceremònia  12:00 PM</p>  
+                    <a
+                        href="https://maps.app.goo.gl/1BXbGsmJBV1DZs4L6"
+                        target="_blank"
+                        class="mt-8 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
+                        Ver ubicación 📍
+                    </a>
+                </div>
+                </div>
+
+                <div class="bg-green-50 rounded-2xl p-6 mb-8">
+                    <div class="text-4xl mb-3">📍</div>
+                    <h3 class="font-playfair text-xl font-bold text-black-800 mb-2">Lloc</h3>
+                    <p class="text-black-600 mb-2">Santa Victoria</p>
+                    <a
+                        href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7"
+                        target="blank"
+                        class="mt-6 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
+                        Ver ubicación 📍
+                    </a>
+                    <div></div>
+
+                    <!--button onclick="openMap()" class="mt-3 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full transition-colors duration-300">
+                        Ver ubicación 📍
+                    </button> -->
+                </div>
+
+                <!-- Código de vestimenta -->
+                <div class="bg-green-50 rounded-2xl p-6 mb-8">
+                    <div class="text-4xl mb-3">👗</div>
+                    <h3 class="font-playfair text-xl font-bold text-black-800 mb-2">Codi de vestimenta</h3>
+                    <p class="text-black-600">Formal / Elegant</p>
+                    <p class="text-sm text-black-500 mt-2">Evita els colors roses, blancs, beiges...</p>
+                </div>
+            </div>
+        </div>
+    <!-- Mensaje especial -->
+    <div class="bg-to-r from-green-400 to-green-200 rounded-3xl p-8 text-center fade-in" style="animation-delay: 1.5s;">
+            <h3 class="font-dancing text-3xl text-gray-800 mb-4">Missatge especial</h3>
+            <p class="font-playfair text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                "L’amor no es mira, es sent. I nosaltres volem sentir-lo al costat de les persones més importants de les nostres vides.
+                Gràcies per formar part de la nostra història d’amor."
+                <img src="Laia i Guillem.jpg" alt="foto nostra" class="max-w-full h-auto rounded-xl">
+            
+        </div>
+        <!-- Confirmación de asistencia -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in border-4 border-green-200" style="animation-delay: 1s;">
+            <div class="text-center">
+                <!--h3 class="font-dancing text-4xl text-green-600 mb-6">Confirma la teva assisstència</h3-->
+                <p class="font-quicksand text-lg text-gray-800 leading-relaxed mb-4 text-center">
+      Ens hauria <span class="italic">agradat</span> convidar tothom, però l’aforament és limitat.
+    </p>
+    <p class="font-quicksand text-lg text-gray-800 leading-relaxed text-center">
+      Si ets aquí, és perquè tens un lloc <span class="font-semibold">molt especial</span> al nostre cor.
+    </p>
+</p>
+                <!--p class="font-playfair text-black-600 mb-6">Per favor, confirma abans de l'1 d'Agost</p-->
+                <section id="plaça-reservada">
+  <div class="card">
+    <span class="decoracio">🌿</span>
+    <h2>T'hem reservat</h2>
+    <p>
+    <strong>1 </strong> 
+    <p></p>
+    <h2>plaça per tu 🤍</h2>
+    </p>
+    <a href="https://forms.gle/NFkoisx11JYHiKud8" target="_blank" class="btn">
+      Confirmar assistència
+    </a>
+
+</body>
+</section>
+ </p>
+<p class="font-dancing text-2xl text-black-600 mt-6">Us esperam, Guillem & Laia </p>
+
+<!--script> /*possible plaça per persona*/
+  const codigoInvitado = prompt("Introdueix el teu codi d'invitació:");
+
+  // URL de tu Sheet convertido a JSON
+  const url = "https://opensheet.elk.sh/2PACX-1vRUFpG6YqqiIcB06sa8eZ9iekdPwgz3Fe_fsEom_EA8gc6-7iY7IMAPwxlS4auM8-9UzLfSI8HlVzcv/Full1";
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      // Buscar al invitado por código
+      const invitado = data.find(i => i.Código === codigoInvitado);
+
+      if(invitado){
+        const plazas = parseInt(invitado.Plazas);
+        const mensaje = document.getElementById("mensaje");
+
+        if(plazas > 1){
+          mensaje.innerHTML = `Hem reservat <strong>${plazas} places</strong> per vosaltres 🤍`;
+        } else {
+          mensaje.innerHTML = `Hem reservat <strong>1 plaça</strong> per ${invitado.Nombre} 🤍`;
+        }
+      } else {
+        alert("Codi invàlid, comprova amb els organitzadors.");
+      }
+    })
+    .catch(err => console.error("Error cargando datos:", err));
+</script>-->
+
+<body>
+<!-- Recuadre: Frases per a regals/obsequis -->
+<section id="frases-regal">
+  <div class="card">
+    <span class="decoracio">🌿</span>
+    <h2>Amb tot el nostre afecte</h2>
+
+    <!-- Botons de selecció -->
+    <div class="tabs" role="tablist" aria-label="Selecciona el to del missatge">
+      <button class="tab active" data-target="tendra" role="tab" aria-selected="true">Tendra</button>
+      <button class="tab" data-target="poetica" role="tab" aria-selected="false">Poètica</button>
+      <button class="tab" data-target="divertida" role="tab" aria-selected="false">Divertida</button>
+    </div>
+
+    <!-- Frases -->
+    <div class="frase active" id="tendra">
+      <p>
+        El millor regal que podem rebre és compartir aquest dia amb vosaltres.
+        Si a més voleu obsequiar-nos amb un detall, us estarem immensament agraïts.
+      </p>
+      <p class="mini">Podeu lliurar-lo personalment o mitjançant transferència bancària.</p>
+    </div>
+
+    <div class="frase" id="poetica">
+      <p>
+        La vostra presència és el nostre tresor. Qualsevol altre detall serà
+        rebut amb gratitud i amor, com flors que embelleixen el nostre camí.
+      </p>
+      <p class="mini">Gràcies per acompanyar-nos en aquest dia tan especial.</p>
+    </div>
+
+    <div class="frase" id="divertida">
+      <p>
+        El millor regal és que sigueu amb nosaltres. Els altres regals… tampoc
+        ens fan nosa 😅. Si voleu, us deixem el nostre compte!
+      </p>
+      <p class="mini">Abraçades, somriures i ball obligatori a la pista 🕺💃</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estil verd coherent amb els teus recuadres */
+  #frases-regal .card {
+    position: relative;
+    background: #f6fdf9;        /* Verd molt clar */
+    border: 2px solid #a3c9a8;  /* Verd mitjà */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  #frases-regal h2 {
+    font-family: "Georgia", serif;
+    color: #4b7254;             /* Verd fosc títol */
+    margin-bottom: 18px;
+  }
+
+  #frases-regal p {
+    font-size: 1.1em;
+    color: #35543c;             /* Verd fosc text */
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+  }
+
+  #frases-regal .mini {
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
+
+  #frases-regal .decoracio {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+  }
+
+  /* Pestanyes (botons) */
+  #frases-regal .tabs {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    background: #e9f6ee;        /* suau */
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid #a3c9a8;
+  }
+  #frases-regal .tab {
+    background: transparent;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #2f6f4e;
+    font-weight: 600;
+    transition: background-color .25s, transform .15s;
+  }
+  #frases-regal .tab:hover { background: #d8efe2; transform: translateY(-1px); }
+  #frases-regal .tab.active {
+    background: #4b7254;
+    color: #fff;
+  }
+
+  /* Mostra/oculta frases */
+  #frases-regal .frase { display: none; animation: fade .25s ease; }
+  #frases-regal .frase.active { display: block; }
+  @keyframes fade { from {opacity: 0} to {opacity: 1} }
+
+  /* Responsiu */
+  @media (max-width: 520px) {
+    #frases-regal .card { padding: 22px; }
+    #frases-regal .tabs { flex-wrap: wrap; }
+  }
+</style>
+
+<script>
+  // Commutador simple de frases
+  (function(){
+    const tabs = document.querySelectorAll('#frases-regal .tab');
+    const blocs = document.querySelectorAll('#frases-regal .frase');
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // estat dels botons
+        tabs.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+
+        // estat dels blocs de frase
+        const target = btn.getAttribute('data-target');
+        blocs.forEach(f => f.classList.toggle('active', f.id === target));
+      });
+    });
+  })();
+</script>
+
+  <div id="plaça-reservada">
+    <div class="card">
+      <h2>Obsequi</h2>
+      <p>Contenido del primer recuadro. <strong>Importante</strong></p>
+      <a href="#" class="btn">Botón 1</a>
+    </div>
+<!-- Recuadre: Frases per a regals/obsequis -->
+<section id="frases-regal">
+  <div class="card">
+    <span class="decoracio">🌿</span>
+    <h2>Amb tot el nostre afecte</h2>
+
+    <!-- Botons de selecció -->
+    <div class="tabs" role="tablist" aria-label="Selecciona el to del missatge">
+      <button class="tab active" data-target="tendra" role="tab" aria-selected="true">Tendra</button>
+      <button class="tab" data-target="poetica" role="tab" aria-selected="false">Poètica</button>
+      <button class="tab" data-target="divertida" role="tab" aria-selected="false">Divertida</button>
+    </div>
+
+    <!-- Frases -->
+    <div class="frase active" id="tendra">
+      <p>
+        El millor regal que podem rebre és compartir aquest dia amb vosaltres.
+        Si a més voleu obsequiar-nos amb un detall, us estarem immensament agraïts.
+      </p>
+      <p class="mini">Podeu lliurar-lo personalment o mitjançant transferència bancària.</p>
+    </div>
+
+    <div class="frase" id="poetica">
+      <p>
+        La vostra presència és el nostre tresor. Qualsevol altre detall serà
+        rebut amb gratitud i amor, com flors que embelleixen el nostre camí.
+      </p>
+      <p class="mini">Gràcies per acompanyar-nos en aquest dia tan especial.</p>
+    </div>
+
+    <div class="frase" id="divertida">
+      <p>
+        El millor regal és que sigueu amb nosaltres. Els altres regals… tampoc
+        ens fan nosa 😅. Si voleu, us deixem el nostre compte!
+      </p>
+      <p class="mini">Abraçades, somriures i ball obligatori a la pista 🕺💃</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estil verd coherent amb els teus recuadres */
+  #frases-regal .card {
+    position: relative;
+    background: #f6fdf9;        /* Verd molt clar */
+    border: 2px solid #a3c9a8;  /* Verd mitjà */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  #frases-regal h2 {
+    font-family: "Georgia", serif;
+    color: #4b7254;             /* Verd fosc títol */
+    margin-bottom: 18px;
+  }
+
+  #frases-regal p {
+    font-size: 1.1em;
+    color: #35543c;             /* Verd fosc text */
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+  }
+
+  #frases-regal .mini {
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
+
+  #frases-regal .decoracio {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+  }
+
+  /* Pestanyes (botons) */
+  #frases-regal .tabs {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    background: #e9f6ee;        /* suau */
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid #a3c9a8;
+  }
+  #frases-regal .tab {
+    background: transparent;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #2f6f4e;
+    font-weight: 600;
+    transition: background-color .25s, transform .15s;
+  }
+  #frases-regal .tab:hover { background: #d8efe2; transform: translateY(-1px); }
+  #frases-regal .tab.active {
+    background: #4b7254;
+    color: #fff;
+  }
+
+  /* Mostra/oculta frases */
+  #frases-regal .frase { display: none; animation: fade .25s ease; }
+  #frases-regal .frase.active { display: block; }
+  @keyframes fade { from {opacity: 0} to {opacity: 1} }
+
+  /* Responsiu */
+  @media (max-width: 520px) {
+    #frases-regal .card { padding: 22px; }
+    #frases-regal .tabs { flex-wrap: wrap; }
+  }
+</style>
+
+<script>
+  // Commutador simple de frases
+  (function(){
+    const tabs = document.querySelectorAll('#frases-regal .tab');
+    const blocs = document.querySelectorAll('#frases-regal .frase');
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // estat dels botons
+        tabs.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+
+        // estat dels blocs de frase
+        const target = btn.getAttribute('data-target');
+        blocs.forEach(f => f.classList.toggle('active', f.id === target));
+      });
+    });
+  })();
+</script>
+
+    </div>
+</html>
