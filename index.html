@@ -24,7 +24,9 @@
     radial-gradient(circle at 20% 80%, rgba(107, 142, 35, 0.6) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(85, 107, 47, 0.6) 0%, transparent 50%);
 }
-
+h1 {
+  margin-bottom: 40px;          /*Redueix l'espai de sota el títol*/
+}
 /* Cos principal */
 body {
   min-height: 100vh;
@@ -37,7 +39,43 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/*Imatges entre frase Ens casam*/
+.contenidor {
+  display: flex;                              /* Col·loca els elements en línia*/
+  align-items: center;                        /* Centra verticalment*/
+  justify-content: center;                    /* Centra horitzontalment*/
+  gap: 2vw;                                  /* Espai entre elements*/
+  margin-top: 0;                         /* Separació superior (opcional)*/
+  flex-wrap: wrap;                         /* Permet que es moguin en pantalles petites*/
+}
+.contenidor img {
+  width: 20vw;                                /* Ajusta la mida de la imatge*/
+  height: auto;                              /* La imatge tindrà la mateixa alçada que el text*/
+  max-width: 350px;                        /* Manté imatge sense deformar*/
+}
+.contenidor span {
+  
+  font-weight: bold;
+}
+.contenidor-proporcional .frase {
+  font-size: 4vw;                           /* Mida del text proporcioal a la pantalla*/
+  font-weight: bold;
+  font-family: 'Playfair', serif;
+  text-align: center;
+  margin-top: 1px;                            /* Elimina marge superior*/
+  margin-bottom: 10px;                      /* Redueix marge inferior*/
+}
+  /* Responsive: ajusta imatges i text en pantalles petites */
+@media (max-width: 480px) {
+  .contenidor-gran img {
+    width: 40vw;
+    
+  }
+  .contenidor-proporcional .frase {
+    font-size: 6vw;
+    margin-bottom: 10px;
+  }
+}
 /* Contador */
 .contador {
   display: flex;
@@ -47,7 +85,7 @@ body {
   padding: 20px 40px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  margin-top: 60px;
+  margin-top: 40px;
   flex-wrap: wrap;
 }
 .bloque { font-size:2em; font-weight:bold; color:#791919; min-width:80px; text-align:center;}
@@ -87,9 +125,6 @@ body {
 .btn,.copiar { display:inline-block; margin-top:20px; background:#4b7254; color:#fff; border:none; padding:10px 20px; border-radius:999px; font-size:1.2em; text-decoration:none; cursor:pointer; transition:background 0.25s, transform 0.15s;}
 .btn:hover,.copiar:hover { background:#35543c; transform:translateY(-2px); }
 
-/* Imagen nostre */
-.imagen-derecha { position:fixed; top:50px; left:79%; transform:translateX(-50%); width:800px; z-index:50; }
-
 @media (max-width:768px){
   .card { flex:1 1 100%; max-width:90%; }
   .imagen-derecha { width:400px; left:50%; }
@@ -99,9 +134,6 @@ body {
 </head>
 
 <body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen bg-floral">
-
-<!-- Imagen nostre -->
-<img src="besito.png" alt="silueta" class="imagen-derecha">
 
 <div class="container mx-auto px-4 py-8 max-w-4xl">
 
@@ -114,7 +146,12 @@ body {
       <img src="mnc.png" alt="Menorca" class="inline-block w-11 h-11">
     </div>
     <h1 class="font-dancing text-6xl md:text-8xl text-green-800 mb-4">Guillem & Laia</h1>
-    <p class="font-playfair text-xl text-black-700">Ens casam!</p>
+      <div class="contenidor">
+        <img src="besito.png" alt="imatge besito esquerra" class="inline-block w-28 h-35">
+        <span class="frase">Ens casam!</span>        
+        <img src="besito.png" alt="imatge besito dreta" class="inline-block w-28 h-35">
+      </div>
+    
   </div>
 
   <!-- Tarjeta principal de invitación -->
@@ -139,51 +176,54 @@ body {
   </div>
 
   <!-- Gran requadre amb subrequadres -->
-  <div class="gran-recuadre fade-in">
+  <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 mb-6 fade-in mt-8 border-4 border-green-600">
+    <div class="gran-recuadre fade-in">
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="subrecuadre">
+          <h3 class="font-dancing text-2xl font-bold mb-2">📅 Data</h3>
+          <p>Dissabte,</p>
+          <p>3 d'octubre</p>
+          <p>2026</p>
+        </div>
+        <div class="subrecuadre">
+          <h3 class="font-dancing text-2xl font-bold mb-2">⏰ Hora</h3>
+          <p>Ceremònia</p>
+          <p> 12:00 PM</p>
+          <a href="https://maps.app.goo.gl/PrdeJyUjpSLvDP6XA" target="_blank" class="mt-4 inline-block bg-green-300 hover:bg-green-700 text-black px-4 py-2 rounded-full transition-colors duration-300">
+            Veure ubicació 📍
+          </a>
+        </div>
+        <div class="subrecuadre">
+          <h3 class="font-dancing text-2xl font-bold mb-2">📍 Lloc</h3>
+          <p>Convit </p>
+          <p>Santa Victoria</p>
+          <a href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7" target="_blank" class="mt-4 inline-block bg-green-300 hover:bg-green-700 text-black px-4 py-2 rounded-full transition-colors duration-300">
+            Veure ubicació 📍
+          </a>
+        </div>
+        <div class="subrecuadre">
+          <h3 class="font-dancing text-2xl font-bold mb-2">👗 Codi de vestimenta</h3>
+          <p>Formal / Elegant</p>
+          <p class="text-sm mt-1">Evita els colors roses, blancs, beiges...</p>
+        </div>
+      </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="subrecuadre">
-        <h3 class="font-dancing text-2xl font-bold mb-2">📅 Data</h3>
-        <p>Dissabte, 3 d'octubre</p>
-        <p>2026</p>
-      </div>
-      <div class="subrecuadre">
-        <h3 class="font-dancing text-2xl font-bold mb-2">⏰ Hora</h3>
-        <p>Ceremònia 12:00 PM</p>
-        <a href="https://maps.app.goo.gl/1BXbGsmJBV1DZs4L6" target="_blank" class="mt-4 inline-block bg-green-300 hover:bg-green-700 text-black px-4 py-2 rounded-full transition-colors duration-300">
-          Veure ubicació 📍
-        </a>
-      </div>
-      <div class="subrecuadre">
-        <h3 class="font-dancing text-2xl font-bold mb-2">📍 Lloc</h3>
-        <p>Santa Victoria</p>
-        <a href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7" target="_blank" class="mt-4 inline-block bg-green-300 hover:bg-green-700 text-black px-4 py-2 rounded-full transition-colors duration-300">
-          Veure ubicació 📍
-        </a>
-      </div>
-      <div class="subrecuadre">
-        <h3 class="font-dancing text-2xl font-bold mb-2">👗 Codi de vestimenta</h3>
-        <p>Formal / Elegant</p>
-        <p class="text-sm mt-1">Evita els colors roses, blancs, beiges...</p>
-      </div>
     </div>
-
   </div>
-
-  <!-- Missatge especial -->
-  <div class="bg-to-r from-green-400 to-green-200 rounded-3xl p-8 text-center fade-in mt-8">
-    <h3 class="font-dancing text-3xl text-black-800 mb-4">Missatge especial</h3>
-    <p class="font-playfair text-gray-700 leading-relaxed max-w-2xl mx-auto">
-      "L’amor no es mira, es sent. I nosaltres volem sentir-lo al costat de ses persones més importants de ses nostres vides. Gràcies per formar part de sa nostra història d’amor."
-    </p>
-    <img src="Laia i Guillem.jpg" alt="foto nostra" class="max-w-full h-auto rounded-xl mt-4">
-  </div>
-
+    <!-- Missatge especial -->
+    <div class="bg-to-r from-green-400 to-green-200 rounded-3xl p-8 text-center fade-in mt-8">
+      <h3 class="font-dancing text-5xl text-black-800 mb-4">Missatge especial</h3>
+      <p class="font-playfair text-black-700 leading-relaxed max-w-2xl mx-auto">
+        "L’amor no es mira, es sent. I nosaltres volem sentir-lo al costat de ses persones més importants de ses nostres vides. Gràcies per formar part de sa nostra història d’amor."
+      </p>
+      <img src="Laia i Guillem.jpg" alt="foto nostra" class="max-w-full h-auto rounded-xl mt-4">
+    </div>
+  
   <!-- Confirmació assistència i targetes -->
-  <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in mt-8 border-4 border-green-200">
+  <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in mt-8 border-4 border-green-600">
     <div class="text-center">
       <p class="font-quicksand text-lg text-black-800 leading-relaxed mb-4 text-center">
-        Ens hauria <span class="italic">agradat</span> convidar tothom, però s’aforament és limitat.
+        Ens hauria agradat convidar tothom, però s’aforament és limitat.
       </p>
       <p class="font-quicksand text-lg text-black-800 leading-relaxed text-center">
         Si ets aquí, és perquè tens un lloc <span class="font-semibold">molt especial</span> al nostre cor.
@@ -200,7 +240,7 @@ body {
           </div>
           <div class="card">
             <span class="decoracio">🌿</span>
-            <h2>Amb tot el nostre afecte</h2>
+            <h2><span class="font-semibold">Amb tot el nostre afecte</span></h2>
             <p>El millor regal que podem rebre és compartir aquest dia amb vosaltres.  
               Si a més voleu obsequiar-nos amb un detall, us estarem immensament agraïts.  
               Podeu lliurar-lo personalment o mitjançant transferència bancària.
