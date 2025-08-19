@@ -235,7 +235,7 @@ body {
             <span class="decoracio">🌿</span>
             <h2>T'hem reservat</h2>
             <p class="numero" id="numero-places">0</p>
-            <h2>plaça per tu 🤍</h2>
+            <h2 id="text-places">plaça per tu 🤍</h2>
             <a href="https://forms.gle/NFkoisx11JYHiKud8" target="_blank" class="btn">Confirmar assistència</a>
           </div>
           <div class="card">
@@ -285,22 +285,49 @@ const intervalo = setInterval(actualizarContador,1000);
 actualizarContador();
 
 document.addEventListener("DOMContentLoaded", function() {
-  const codis = {"a8f3z":1,"7xk92":2,"z3lm1":3,"9qwr4":4};
+  const codis = {
+    "23lbj": 1,
+    "tm09m": 2,
+    "a0h3t": 3,
+    "oh4na": 4,
+    "llepemesous": "single"
+  };
+
   const params = new URLSearchParams(window.location.search);
   let codi = params.get("codi");
-  if(codi) codi = codi.toLowerCase().trim();
+
+  if(codi) {
+    codi = codi.toLowerCase().trim();
+    codi = codi.replace(/\s+/g, '');
+    codi = codi.replace(/[^a-z0-9]/g, '');
+  }
 
   const numeroEl = document.getElementById("numero-places");
-  const textPlaça = numeroEl.nextElementSibling;
+  const textPlaça = document.getElementById("text-places"); // 🔹 apuntamos al h2 con id
 
-  if(!codi) { numeroEl.textContent="?"; textPlaça.textContent="⚠️ Cap codi a l'URL"; return; }
+  if(!codi) { 
+    numeroEl.textContent = "?"; 
+    textPlaça.textContent = "⚠️ Cap codi a l'URL"; 
+    return; 
+  }
 
-  if(codis[codi]) {
+  if(codis.hasOwnProperty(codi)) {
     const places = codis[codi];
-    numeroEl.textContent=places;
-    textPlaça.textContent=(places===1)?"plaça per tu 🤍":"places per tu 🤍";
-  } else { numeroEl.textContent="?"; textPlaça.textContent="⚠️ Codi invàlid"; }
+
+    if(places === "single") {
+      numeroEl.textContent = "🖕";
+      textPlaça.textContent = "places reservades per tu 😅";
+    } else {
+      numeroEl.textContent = places;
+      textPlaça.textContent = (places === 1) ? "plaça per tu 🤍" : "places per tu 🤍";
+    }
+  } else { 
+    numeroEl.textContent = "?"; 
+    textPlaça.textContent = "⚠️ Codi invàlid"; 
+  }
 });
+
+
 </script>
 
 </body>

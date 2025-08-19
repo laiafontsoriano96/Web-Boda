@@ -201,6 +201,23 @@
         }
     </style>
 </head>
+<!-- Imagen nostre -->
+    <meta charset="UTF-8">
+        <title>Imatge nostre</title>
+        <style>
+            .imagen-derecha {
+            position: fixed;   /* Posiciona la imagen libremente */
+            top: -600px;            /* Distancia desde arriba */
+            left: 79%; /*empieza desde el centro de la pantalla*/
+            transform: translateX (-50%); /*centra la imagen respecto a su ancho*/
+            right: 1px;          /* Distancia desde la derecha */
+            width: 800px;         /* Tamaño de la imagen */
+            z-index: 50; /*important, queda davant del contingut*/
+            }
+        </style>
+   
+            <!-- Imagen -->
+            <img src="besito.png" alt="silueta" class="imagen-derecha">
 
 <body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen bg-floral">
     <div class="container mx-auto px-4 py-8 max-w-4xl">
@@ -218,53 +235,17 @@
 
         <!-- Tarjeta principal de invitación -->
         <div class="bg-green rounded-3xl shadow-2xl p-8 md:p-12 mb-8 fade-in border-4 border-green-200" style="animation-delay: 0.5s;">
-            <div class="text-center mb-8">
-              <svg class="w-16 h-16 mx-auto text-[#791919] mb-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-              <p class="font-playfair text-lg text-black-600 leading-relaxed">
-                Des de Mallorca i Menorca, amb amor i aventures,
-                hem decidit fer equip per sempre!
-                Comencem es viatge més important de sa nostra vida,
-                i ens encantaria que ens acompanyassis per celebrar-ho!
-              </p>
-            </div>
-        </div>
-
-        <!-- Requadre gran amb detalls del casament -->
-        <div class="recuadro fade-in bg-green-100 shadow-inner" style="animation-delay: 0.5s;">
-            <h2 class="font-dancing text-4xl text-green-800 mb-6">Detalls del Casament</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Data -->
-                <div class="bg-green-50 rounded-2xl p-6 text-center">
-                    <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">📅 Data</h3>
-                    <p class="text-black-600">Dissabte, 3 d'octubre</p>
-                    <p class="text-black-600">2026</p>
-                </div>
-
-                <!-- Hora -->
-                <div class="bg-green-50 rounded-2xl p-6 text-center">
-                    <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">⏰ Hora</h3>
-                    <p class="text-black-600">Ceremònia 12:00 PM</p>  
-                    <a href="https://maps.app.goo.gl/1BXbGsmJBV1DZs4L6" target="_blank" class="mt-6 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
-                        Veure ubicació 📍
-                    </a>
-                </div>
-
-                <!-- Lloc -->
-                <div class="bg-green-50 rounded-2xl p-6 text-center flex flex-col items-center">
-                    <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">📍 Lloc</h3>
-                    <p class="text-black-600 mb-2">Santa Victoria</p>
-                    <a href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7" target="blank" class="mt-6 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
-                        Veure ubicació 📍
-                    </a>
-                </div>
-
-                <!-- Codi de vestimenta -->
-                <div class="bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
-                    <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">👗 Codi de vestimenta</h3>
-                    <p class="text-black-600">Formal / Elegant</p>
-                    <p class="text-sm text-black-500 mt-2">Evita els colors roses, blancs, beiges...</p>
+            <div class="text-center">
+                <div class="mb-8">
+                    <svg class="w-16 h-16 mx-auto text-[#791919] mb-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <p class="font-playfair text-lg text-black-600 leading-relaxed">
+                        Des de Mallorca i Menorca, amb amor i aventures,
+                        hem decidit fer equip per sempre!
+                        Comencem es viatge més important de sa nostra vida,
+                        i ens encantaria que ens acompanyassis per celebrar-ho!
+                    </p>
                 </div>
             </div>
         </div>
@@ -277,10 +258,43 @@
             <div class="bloque" id="segons">0<span>Segons</span></div>
         </div>
 
+        <!-- Detalls del casament: data i hora -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8 mt-16">
+            <div class="bg-green-50 rounded-2xl p-6 text-center">
+                <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">📅 Data</h3>
+                <p class="text-black-600">Dissabte, 3 d'octubre</p>
+                <p class="text-black-600">2026</p>
+            </div>
+            <div class="bg-green-50 rounded-2xl p-6 text-center">
+                <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">⏰ Hora</h3>
+                <p class="text-black-600">Ceremònia 12:00 PM</p>  
+                <a href="https://maps.app.goo.gl/1BXbGsmJBV1DZs4L6" target="_blank" class="mt-8 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
+                    Veure ubicació 📍
+                </a>
+            </div>
+        </div>
+
+        <!-- Lloc -->
+        <div class="bg-green-50 rounded-2xl p-6 mb-8 text-center flex flex-col items-center">
+            <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">📍 Lloc</h3>
+            <p class="text-black-600 mb-2">Santa Victoria</p>
+            <a href="https://maps.app.goo.gl/ThfTj2LmAxCqezzP7" target="blank" class="mt-6 inline-block bg-green-300 hover:bg-green-700 text-black px-6 py-2 rounded-full transition-colors duration-300">
+                Veure ubicació 📍
+            </a>
+        </div>
+
+        <!-- Codi de vestimenta -->
+        <div class="bg-green-50 rounded-2xl p-6 mb-8 flex flex-col items-center justify-center text-center">
+            <h3 class="font-dancing text-3xl font-bold text-black-800 mb-2">👗 Codi de vestimenta</h3>
+            <p class="text-black-600">Formal / Elegant</p>
+            <p class="text-sm text-black-500 mt-2">Evita els colors roses, blancs, beiges...</p>
+        </div>
+
+
         <!-- Missatge especial -->
         <div class="bg-to-r from-green-400 to-green-200 rounded-3xl p-8 text-center fade-in" style="animation-delay: 1.5s;">
             <h3 class="font-dancing text-3xl text-black-800 mb-4">Missatge especial</h3>
-            <p class="font-playfair text-black-700 leading-relaxed max-w-2xl mx-auto">
+            <p class="font-playfair text-gray-700 leading-relaxed max-w-2xl mx-auto">
                 "L’amor no es mira, es sent. I nosaltres volem sentir-lo al costat de les persones més importants de les nostres vides.
                 Gràcies per formar part de la nostra història d’amor."
             </p>
