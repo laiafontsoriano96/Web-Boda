@@ -294,45 +294,44 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   const params = new URLSearchParams(window.location.search);
-  let codi = params.get("codi")|| params.get('code'); // admet ambdós per si de cas
+  let codi = params.get("codi") || params.get("code"); // admite ambos
 
-  if(codi) {
+  if (codi) {
     codi = codi.toString().toLowerCase().trim();
     codi = codi.replace(/\s+/g, '');
-    codi = codi.replace(/[^a-z0-9]/g, ''); // Mantén només lletres i números (si vols permetre guions, afegeix - al regex
+    codi = codi.replace(/[^a-z0-9]/g, ''); // solo letras y números
   }
 
   const numeroEl = document.getElementById("numero-places");
-  const textPlaça = document.getElementById("text-places"); // 🔹 apuntamos al h2 con id
+  const textPlaca = document.getElementById("text-places"); // variable correcta
 
-  if (!numeroEl || !textPlaces) return; // seguretat
+  if (!numeroEl || !textPlaca) return; // seguridad
 
-  if(!codi) { 
-    numeroEl.textContent = "?"; 
-    textPlaça.textContent = "⚠️ Cap codi a l'URL"; 
-    return; 
+  if (!codi) {
+    numeroEl.textContent = "?";
+    textPlaca.textContent = "⚠️ Cap codi a l'URL";
+    return;
   }
 
   if (Object.prototype.hasOwnProperty.call(codis, codi)) {
     const places = codis[codi];
 
     if (places === 'single') {
-                // Usa seqüència Unicode per evitar problemes d'encoding
       numeroEl.textContent = '🖕';
-      textPlaces.textContent = 'per tu 🤍';
-     
+      textPlaca.textContent = 'per tu 🤍';
     } else if (Number.isFinite(places)) {
       numeroEl.textContent = String(places);
-      textPlaces.textContent = places === 1 ? 'plaça per tu 🤍' : 'places per tu 🤍';
+      textPlaca.textContent = places === 1 ? 'plaça per tu 🤍' : 'places per tu 🤍';
     } else {
-    numeroEl.textContent = '?';
-    textPlaces.textContent = '⚠️ Codi mal configurat';
+      numeroEl.textContent = '?';
+      textPlaca.textContent = '⚠️ Codi mal configurat';
     }
   } else {
     numeroEl.textContent = '？';
-    textPlaces.textContent = '⚠️ Codi invàlid';
+    textPlaca.textContent = '⚠️ Codi invàlid';
   }
 });
+
 </script>
 
 </body>
